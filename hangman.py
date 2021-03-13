@@ -5,7 +5,7 @@ import sys
 class Hangman:
 
     def __init__(self):
-        self.lives = 12
+        self.lives = 10
 
     def play(self):
         self.input_word()
@@ -17,9 +17,9 @@ class Hangman:
         print("Hallo welcome to the hangman game.")
         # User inputs a word
         # getpass will make sure the input wont be visible
-        answer = getpass.getpass("why don't you give me a word?:")
+        self.answer = getpass.getpass("why don't you give me a word?:")
         # Makes a list of the word the user inputted
-        self.list_of_letters = list(answer)
+        self.list_of_letters = list(self.answer)
         # Counts the objects in the list
         self.number_of_letters = len(self.list_of_letters)
         print("The other player will have", self.lives, "attempts to guess this", self.number_of_letters, "-letter word")
@@ -36,29 +36,177 @@ class Hangman:
             if letter in self.list_of_letters:
                 print("true")
             else:
-                self.lives = self.lives - 1
                 print("fals")
+                self.lives = self.lives - 1
         # Checks if the given words are the same
         elif list_letter == self.list_of_letters:
             print("correct you win")
             sys.exit(0)
         else:
-            self.lives = self.lives - 1
             print("nee")
+            self.lives = self.lives - 1
 
     def amount_of_lives(self):
         while self.lives > 0:
-            print(self.lives)
+            if self.lives == 10:
+                print("--------------------------")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("|                        |")
+                print("--------------------------")
+
+            elif self.lives == 9:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 8:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 7:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |___________________  |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 6:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |___________________  |")
+                print("|  |/                    |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 5:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |___________________  |")
+                print("|  |/          |         |")
+                print("|  |           O         |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 4:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |___________________  |")
+                print("|  |/          |         |")
+                print("|  |           O         |")
+                print("|  |           |         |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 3:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |___________________  |")
+                print("|  |/          |         |")
+                print("|  |           O         |")
+                print("|  |          /|         |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 2:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |___________________  |")
+                print("|  |/          |         |")
+                print("|  |           O         |")
+                print("|  |          /|\        |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
+            elif self.lives == 1:
+                print("--------------------------")
+                print("|                        |")
+                print("|  |___________________  |")
+                print("|  |/          |         |")
+                print("|  |           O         |")
+                print("|  |          /|\        |")
+                print("|  |          /          |")
+                print("|  |                     |")
+                print("|  |                     |")
+                print("|  |___________________  |")
+                print("|                        |")
+                print("--------------------------")
             self.compare_input()
         else:
-            print("you failed")
-            sys.exit(0)
+            print("--------------------------")
+            print("|                        |")
+            print("|  |___________________  |")
+            print("|  |/          |         |")
+            print("|  |           O         |")
+            print("|  |          /|\        |")
+            print("|  |          / \        |")
+            print("|  |                     |")
+            print("|  |                     |")
+            print("|  |___________________  |")
+            print("|                        |")
+            print("--------------------------")
+            print("you faled the word was", self.answer)
+
+
+        # while self.lives > 0:
+        #     print(self.lives)
+        #     self.compare_input()
+        # else:
+        #     print("you failed")
+        #     sys.exit(0)
 
 # TODO  show letters you guest correct
 # TODO  place letter on correct position
 # TODO  exit when all letter are guessed correct OR you will just need to enter the whole word
-# TODO  make drawings of the hanging man
-# TODO  show correct drawings of the hangman with the amount of lives left
+# TODO  show the letters you guessed
 
 
 if __name__ == '__main__':
