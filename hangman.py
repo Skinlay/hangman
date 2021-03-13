@@ -9,7 +9,7 @@ class Hangman:
     def play(self):
         self.input_word()
         self.under_score()
-        self.letter_in_list()
+        self.compare_input()
 
     def input_word(self):
         print("Hallo welcome to the hangman game.")
@@ -24,15 +24,21 @@ class Hangman:
     def under_score(self):
         print("_ " * self.number_of_letters)
 
-    def letter_in_list(self):
+    def compare_input(self):
         letter = input()
-        # Checks if the given letter is in the list of the word
-        if letter in self.list_of_letters:
-            print("true")
+        list_letter = list(letter)
+        # If it is a letter
+        if list_letter < self.list_of_letters:
+            # check if its in the word
+            if letter in self.list_of_letters:
+                print("true")
+            else:
+                print("fals")
+        # Checks if the given words are the same
+        elif list_letter == self.list_of_letters:
+            print("correct you win")
         else:
-            print("fals")
-
-
+            print("nee")
 
 
 if __name__ == '__main__':
