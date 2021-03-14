@@ -193,20 +193,14 @@ class Hangman:
             print("|  |___________________  |")
             print("|                        |")
             print("--------------------------")
-            print("you faled the word was", self.answer)
+            print("you failed the word was", self.answer)
 
-
-        # while self.lives > 0:
-        #     print(self.lives)
-        #     self.compare_input()
-        # else:
-        #     print("you failed")
-        #     sys.exit(0)
 
 # TODO  show letters you guest correct
 # TODO  place letter on correct position
 # TODO  exit when all letter are guessed correct OR you will just need to enter the whole word
 # TODO  show the letters you guessed
+# TODO change dwawing upper line to lower case one line higher
 
 
 if __name__ == '__main__':
