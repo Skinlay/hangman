@@ -36,14 +36,14 @@ class Hangman:
             if letter in self.list_of_letters:
                 print("true")
             else:
-                print("fals")
+                print("false")
                 self.lives = self.lives - 1
         # Checks if the given words are the same
         elif list_letter == self.list_of_letters:
             print("correct you win")
             sys.exit(0)
         else:
-            print("nee")
+            print("nope")
             self.lives = self.lives - 1
 
     def amount_of_lives(self):
